@@ -18,6 +18,6 @@ public class Flipkart extends FlipkartBase {
 		System.out.println((i+1)+")"+f.getListproduct().get(i).getText()+"======="+f.getListproductrate().get(i).getText());
 		System.out.println();
 	}
-	
+	quitBrowser();
 	}
 }
