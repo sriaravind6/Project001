@@ -32,6 +32,12 @@ public class FlipkartpageClass extends FlipkartBase{
 	@CacheLookup
 	@FindAll({@FindBy(xpath="//div[@class='_30jeq3 _1_WHN1']")})
 	private List<WebElement> listproductrate;
+	@CacheLookup
+	@FindAll({@FindBy(xpath="//a[@class='ge-49M']")})
+	private List<WebElement> PageList;
+	public List<WebElement> getPageList() {
+		return PageList;
+	}
 	public List<WebElement> getListproduct() {
 		return listproduct;
 	}

@@ -5,7 +5,7 @@ import java.awt.AWTException;
 import BaseHotelClass.*;
 
 public class Flipkart extends FlipkartBase {
-	public static void main(String[] args) throws AWTException {
+	public static void main(String[] args) throws AWTException, InterruptedException {
 		
 	lanchbrowser("chrome");
 	lanchUrl("https://www.flipkart.com/");
@@ -14,10 +14,18 @@ public class Flipkart extends FlipkartBase {
 	FlipkartpageClass f = new FlipkartpageClass();
 	sendKeys(f.getProductSearch(), "iPhone");
 	btnclick(f.getBtnsubmit());
-	for (int i = 0; i < f.getListproductrate().size(); i++) {
-		System.out.println((i+1)+")"+f.getListproduct().get(i).getText()+"======="+f.getListproductrate().get(i).getText());
+	System.out.println("============================Page 1 Products=======================");
+	System.out.println();
+	listOfProducts();
+	System.out.println();
+	for (int i = 0; i < 4; i++) {
+		System.out.println("=====================Page "+(i+2)+" Products================");
+		System.out.println();
+		btnclick(f.getPageList().get(i));
+		threadsleep(5000);
+		listOfProducts();
 		System.out.println();
 	}
-	
+	quitBrowser();
 	}
 }
